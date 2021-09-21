@@ -36,6 +36,9 @@ from forcebalance.output import getLogger
 from forcebalance.openmmio import OpenMM, UpdateSimulationParameters
 import json
 
+from openff.interchange.components.interchange import Interchange
+from openff.interchange.models import VirtualSiteKey
+
 logger = getLogger(__name__)
 try:
     from simtk.openmm.app import *
@@ -420,19 +423,23 @@ class SMIRNOFF(OpenMM):
 
         # Apply the FF parameters to the system. Currently this is the only way to
         # determine if the FF will apply virtual sites to the system.
-        _, openff_topology = self.forcefield.create_openmm_system(
-            self.off_topology, return_topology=True
-        )
+        interchange = Interchange.from_smirnoff(force_field=self.forcefield, topology=self.off_topology)
+        # _, openff_topology = self.forcefield.create_openmm_system(
+        #     self.off_topology, return_topology=True
+        # )
 
         ## Generate OpenMM-compatible positions
         self.xyz_omms = []
+
+        # TODO: Make a cleaner API point that returns the number of virtual sites
+        n_virtual_sites = len([key for key in interchange['Electrostatics'].slot_map if type(key) == VirtualSiteKey])
 
         for I in range(len(self.mol)):
             xyz = self.mol.xyzs[I]
             xyz_omm = (
                 [Vec3(i[0],i[1],i[2]) for i in xyz]
                 # Add placeholder positions for an v-sites.
-                + [Vec3(0.0, 0.0, 0.0)] * openff_topology.n_topology_virtual_sites
+                + [Vec3(0.0, 0.0, 0.0)] * n_virtual_sites
             ) * angstrom
 
             if self.pbc:
@@ -447,11 +454,11 @@ class SMIRNOFF(OpenMM):
             self.xyz_omms.append((xyz_omm, box_omm))
 
         # used in create_simulation()
-        openmm_topology = SMIRNOFF._openff_to_openmm_topology(openff_topology)
+        openmm_topology = SMIRNOFF._openff_to_openmm_topology(self.off_topology)
         openmm_positions = (
             self.pdb.positions.value_in_unit(angstrom) +
             # Add placeholder positions for an v-sites.
-            [Vec3(0.0, 0.0, 0.0)] * openff_topology.n_topology_virtual_sites
+            [Vec3(0.0, 0.0, 0.0)] * n_virtual_sites
         ) * angstrom
 
         self.mod = Modeller(openmm_topology, openmm_positions)
