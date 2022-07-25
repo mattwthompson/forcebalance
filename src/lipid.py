@@ -25,7 +25,7 @@ from subprocess import PIPE
 try:
     from lxml import etree
 except: pass
-from pymbar import pymbar
+from pymbar import MBAR
 import itertools
 from collections import defaultdict, namedtuple, OrderedDict
 import csv
@@ -663,7 +663,7 @@ class Lipid(Target):
         W1 = None
         if len(BPoints) > 1:
             logger.info("Running MBAR analysis on %i states...\n" % len(BPoints))
-            mbar = pymbar.MBAR(U_kln, N_k, verbose=mbar_verbose, relative_tolerance=5.0e-8)
+            mbar = MBAR(U_kln, N_k, verbose=mbar_verbose, relative_tolerance=5.0e-8)
             W1 = mbar.getWeights()
             logger.info("Done\n")
         elif len(BPoints) == 1:
