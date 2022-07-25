@@ -664,7 +664,7 @@ class Lipid(Target):
         if len(BPoints) > 1:
             logger.info("Running MBAR analysis on %i states...\n" % len(BPoints))
             mbar = MBAR(U_kln, N_k, verbose=mbar_verbose, relative_tolerance=5.0e-8)
-            W1 = mbar.getWeights()
+            W1 = mbar.weights()
             logger.info("Done\n")
         elif len(BPoints) == 1:
             W1 = np.ones((BPoints*Shots,BPoints))
