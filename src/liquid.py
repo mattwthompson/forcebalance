@@ -935,7 +935,13 @@ class Liquid(Target):
                         mU_kln[k, m, :]  = mE[mE_idx]
                         mU_kln[k, m, :] *= beta
                 if np.abs(np.std(mE)) > 1e-6 and mBSims > 1:
-                    mmbar = pymbar.MBAR(mU_kln, mN_k, verbose=False, relative_tolerance=5.0e-8)
+                    mmbar = pymbar.MBAR(
+                        mU_kln,
+                        mN_k,
+                        verbose=False,
+                        relative_tolerance=5.0e-8,
+                        solver_protocol='adaptive',
+                    )
                     mW1 = mmbar.weights()
             elif len(mBPoints) == 1:
                 mW1 = np.ones((mShots,1))
