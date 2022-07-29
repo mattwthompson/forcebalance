@@ -940,7 +940,7 @@ class Liquid(Target):
                         mN_k,
                         verbose=False,
                         relative_tolerance=5.0e-8,
-                        solver_protocol='adaptive',
+                        solver_protocol='robust',
                     )
                     mW1 = mmbar.weights()
             elif len(mBPoints) == 1:
