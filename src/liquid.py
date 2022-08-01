@@ -894,7 +894,15 @@ class Liquid(Target):
         W1 = None
         if len(BPoints) > 1:
             logger.info("Running MBAR analysis on %i states...\n" % len(BPoints))
-            mbar = pymbar.MBAR(U_kln, N_k, verbose=mbar_verbose, relative_tolerance=5.0e-8)
+            mbar = pymbar.MBAR(
+                U_kln,
+                N_k,
+                verbose=mbar_verbose,
+                relative_tolerance=5.0e-8,
+                solver_protocol=(
+                    {'method': 'adaptive'},
+                )
+            )
             W1 = mbar.weights()
             logger.info("Done\n")
         elif len(BPoints) == 1:
@@ -940,7 +948,9 @@ class Liquid(Target):
                         mN_k,
                         verbose=False,
                         relative_tolerance=5.0e-8,
-                        solver_protocol='robust',
+                        solver_protocol=(
+                            {'method': 'adaptive'},
+                        ),
                     )
                     mW1 = mmbar.weights()
             elif len(mBPoints) == 1:
