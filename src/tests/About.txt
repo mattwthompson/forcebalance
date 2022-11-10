@@ -51,7 +51,7 @@ All test modules should start by importing the following:
 
 along with any other modules required by tests. Modules should end with:
 
-    if __name__ == '__main__':           
+    if __name__ == '__main__':
         unittest.main()
 
 This provides added flexibility by allowing test modules to be run as standalone scripts using a default test runner.
@@ -90,7 +90,7 @@ done by the individual subclass test cases.
 =============================
 
 When possible, try to include docstrings and comments within test cases. The test runner will automatically print
-the first line of the docstring for the test method currently being run. In addition, it would probably be helpful to 
+the first line of the docstring for the test method currently being run. In addition, it would probably be helpful to
 send as much information as possible to the debug logger (ForceBalanceTestCase provides an instance logger, so you can use
 self.logger.debug(msg) from anywhere within a test case and not worry about having to import things in a test module.
 

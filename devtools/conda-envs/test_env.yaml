@@ -10,6 +10,7 @@ dependencies:
     # Testing
   - pytest-cov
   - pytest-xdist
+  - pytest-randomly
   - codecov
   - lxml
   - swig

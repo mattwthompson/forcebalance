@@ -27,4 +27,3 @@
   <Atom type="tip3p-fb-H" charge="0.4242243450515" sigma="1" epsilon="0" />
  </NonbondedForce>
 </ForceField>
-

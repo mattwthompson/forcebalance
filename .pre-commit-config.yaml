@@ -1,0 +1,43 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.3.0
+  hooks:
+  - id: check-yaml
+  - id: end-of-file-fixer
+    exclude: '^Products|\.(pdb|gro|top|sdf|itp|mol2|xyz|in|out|gbs|mdp|offxml|frcmod)$|src/tests/files'
+  - id: trailing-whitespace
+    exclude: '^Products|\.(pdb|gro|top|sdf|itp|mol2|xyz|in|out|gbs|mdp|offxml|frcmod)$|src/tests/files'
+  - id: debug-statements
+    exclude: 'bin/ForceBalance.py'
+- repo: https://github.com/psf/black
+  rev: 22.10.0
+  hooks:
+  - id: black
+  - id: black-jupyter
+- repo: https://github.com/PyCQA/isort
+  rev: 5.10.1
+  hooks:
+  - id: isort
+- repo: https://github.com/asottile/pyupgrade
+  rev: v3.2.2
+  hooks:
+  - id: pyupgrade
+    args: [--py38-plus]
+-   repo: https://github.com/PyCQA/autoflake
+    rev: v1.7.7
+    hooks:
+    -   id: autoflake
+- repo: https://github.com/nbQA-dev/nbQA
+  rev: 1.5.3
+  hooks:
+    - id: nbqa-pyupgrade
+      files: ^examples
+      args:
+        - --py37-plus
+    - id: nbqa-isort
+      files: ^examples
+- repo: https://github.com/kynan/nbstripout
+  rev: 0.6.1
+  hooks:
+    - id: nbstripout
+      files: ^examples

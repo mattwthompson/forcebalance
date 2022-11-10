@@ -73,10 +73,10 @@ if you notice anything that should be added.
 
 Published work that utilizes ForceBalance should include the following references:
 
-Wang L-P, Chen J and Van Voorhis T. "Systematic Parametrization of Polarizable Force Fields from Quantum Chemistry Data." 
+Wang L-P, Chen J and Van Voorhis T. "Systematic Parametrization of Polarizable Force Fields from Quantum Chemistry Data."
 J. Chem. Theory Comput. 2013, 9, 452-460. DOI: 10.1021/ct300826t
 
-Wang L-P, Martinez TJ and Pande VS. "Building Force Fields: An Automatic, Systematic, and Reproducible Approach." 
+Wang L-P, Martinez TJ and Pande VS. "Building Force Fields: An Automatic, Systematic, and Reproducible Approach."
 J. Phys. Chem. Lett. 2014, 5, 1885-1891. DOI: 10.1021/jz500737m
 
 Qiu Y, Nerenberg PS, Head-Gordon T and Wang L-P. "Systematic Optimization of Water Models Using Liquid/Vapor Surface Tension Data."
