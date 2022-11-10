@@ -9,6 +9,7 @@ dependencies:
   - pip
     # Testing
   - pytest-cov
+  - pytest-xdist
   - codecov
   - lxml
   - swig
