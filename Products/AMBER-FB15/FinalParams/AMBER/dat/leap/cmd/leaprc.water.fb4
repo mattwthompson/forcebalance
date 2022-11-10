@@ -72,4 +72,3 @@ WAT = FB4
 mods2 = loadamberparams frcmod.tip4pfb
 loadAmberParams frcmod.ionsjc_tip4pew
 loadAmberParams frcmod.ions234lm_126_tip4pew
-

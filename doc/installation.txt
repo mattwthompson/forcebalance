@@ -31,7 +31,7 @@ or the Open Force Field toolkit.
 
 @section installing_forcebalance Installing ForceBalance from source
 
-%ForceBalance is packaged as a Python module.  Here are the installation instructions.  
+%ForceBalance is packaged as a Python module.  Here are the installation instructions.
 
 A quick preface: Installing software can be a real pain.  I tried to make %ForceBalance easy to install by providing clear instructions and minimizing the number of dependencies; however, complications and challenges during installation happen all the time.  If you are running into installation problems or having trouble resolving a dependency, please contact me.
 
@@ -161,7 +161,7 @@ I have provided a specialized version of GROMACS (dubbed version
 website</a> which interfaces with %ForceBalance through the
 abinitio_gmxx2 module.  Although interfacing with unmodified
 simulation software is straightforward, GROMACS-X2 is optimized for
-force field optimization and makes things much faster.  
+force field optimization and makes things much faster.
 
 GROMACS-X2 contains major modifications from GROMACS 4.0.7.
 Most importantly, it enables computation of the objective function

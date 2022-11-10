@@ -10,7 +10,7 @@ scripts contained in the \c bin directory on the example jobs in the
 optimization.  It requires an input file and a \ref
 directory_structure.  \c MakeInputFile.py will create an example input
 file containing all options, their default values, and a short
-description for each option.  
+description for each option.
 
 @section input_file Input file
 
@@ -193,7 +193,7 @@ JOB 0
 COORDS x1 y1 z1 x2 y2 z2 ...
 ENERGY e
 FORCES fx1 fy1 fz1 ...
-ESPXYZ ex1 ey1 ez1 ex2 ey2 ez2 ... 
+ESPXYZ ex1 ey1 ez1 ex2 ey2 ez2 ...
 ESPVAL ev1 ev2 ev3 ..
 @endverbatim
 

@@ -19,5 +19,3 @@
 #include "ffnonbonded.itp"
 #include "ffbonded.itp"
 #include "gbsa.itp"
-
-

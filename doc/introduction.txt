@@ -112,7 +112,7 @@ experimental observations (for example, adjusting some parameters in
 order to reproduce particular protein NMR structure) at the expense of
 reproducibility.
 
-@subsection mission_statement Purpose and brief description of this program 
+@subsection mission_statement Purpose and brief description of this program
 
 Given this background, I can make the following statement.  <b>The
 purpose of %ForceBalance is to create force fields by applying a highly
@@ -197,7 +197,7 @@ and assisted with developing the interface to the Open Force Field toolkit. (201
 - Simon Boothroyd contributed the interface to PropertyEstimator with Yudong Qiu. (2019)
 
 - Arthur Vigil contributed the unit testing framework and many unit tests,
-significant improvements to the automatic documentation generation, 
+significant improvements to the automatic documentation generation,
 logging of output, graphical user interface, and various code improvements.
 (2012-2013)
 
@@ -241,4 +241,3 @@ NIH Grant R01 AI130684-02
 ACS-PRF 58158-DNI6
 NIH Grant U54 GM072970
 Open Force Field Consortium
-

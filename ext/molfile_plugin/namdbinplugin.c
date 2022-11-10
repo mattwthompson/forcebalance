@@ -37,7 +37,7 @@ typedef struct {
   double *xyz;
 } namdbinhandle;
 
-static void *open_namdbin_read(const char *path, const char *filetype, 
+static void *open_namdbin_read(const char *path, const char *filetype,
     int *natoms) {
   namdbinhandle *namdbin;
   FILE *fd;
@@ -99,7 +99,7 @@ static int read_next_timestep(void *v, int natoms, molfile_timestep_t *ts) {
   char tmp0, tmp1, tmp2, tmp3;
 
   namdbin = (namdbinhandle *)v;
-  if (!namdbin->fd) 
+  if (!namdbin->fd)
     return MOLFILE_ERROR;  /* Done reading frames */
 
   numatoms = namdbin->numatoms;
@@ -131,14 +131,14 @@ static int read_next_timestep(void *v, int natoms, molfile_timestep_t *ts) {
     }
   }
   /*
-   * Close the file handle and set to NULL so we know we're done reading 
+   * Close the file handle and set to NULL so we know we're done reading
    */
   fclose(namdbin->fd);
   namdbin->fd = NULL;
 
   return MOLFILE_SUCCESS;
 }
- 
+
 static void close_file_read(void *v) {
   namdbinhandle *namdbin = (namdbinhandle *)v;
   if (namdbin->fd)
@@ -147,7 +147,7 @@ static void close_file_read(void *v) {
   free(namdbin);
 }
 
-static void *open_namdbin_write(const char *path, const char *filetype, 
+static void *open_namdbin_write(const char *path, const char *filetype,
     int natoms) {
   namdbinhandle *namdbin;
   FILE *fd;
@@ -165,14 +165,14 @@ static void *open_namdbin_write(const char *path, const char *filetype,
 }
 
 static int write_timestep(void *v, const molfile_timestep_t *ts) {
-  
+
   int i;
   namdbin_int32 myint;
   namdbinhandle *namdbin = (namdbinhandle *)v;
-  
+
   if (!namdbin->fd)
     return MOLFILE_ERROR;
-  
+
   myint = (namdbin_int32)namdbin->numatoms;
   fwrite(&myint, 4, 1, namdbin->fd);
 
@@ -183,7 +183,7 @@ static int write_timestep(void *v, const molfile_timestep_t *ts) {
       return MOLFILE_ERROR;
     }
   }
-  
+
   /*
    * Close and NULLify the file handle so we don't write any more frames.
    */
@@ -192,7 +192,7 @@ static int write_timestep(void *v, const molfile_timestep_t *ts) {
 
   return MOLFILE_SUCCESS;
 }
-       
+
 static void close_file_write(void *v) {
   namdbinhandle *namdbin = (namdbinhandle *)v;
   if (namdbin->fd)
@@ -235,7 +235,7 @@ VMDPLUGIN_API int VMDPLUGIN_fini() {
   return VMDPLUGIN_SUCCESS;
 }
 
-  
+
 #ifdef TEST_NAMDBINPLUGIN
 
 int main(int argc, char *argv[]) {
@@ -245,7 +245,7 @@ int main(int argc, char *argv[]) {
   int i;
 
   while (--argc) {
-    ++argv; 
+    ++argv;
     v = open_namdbin_read(*argv, &header);
     if (!v) {
       fprintf(stderr, "open_namdbin_read failed for file %s\n", *argv);
@@ -263,7 +263,6 @@ int main(int argc, char *argv[]) {
   }
   return 0;
 }
- 
-      
-#endif  
 
+
+#endif

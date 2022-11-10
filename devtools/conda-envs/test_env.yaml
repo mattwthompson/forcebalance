@@ -2,25 +2,22 @@ name: forcebalance-test
 channels:
   - conda-forge
   - bioconda
+  - openeye
 dependencies:
     # Base depends
   - python
   - pip
     # Testing
-  - pytest
   - pytest-cov
+  - pytest-xdist
+  - pytest-randomly
   - codecov
-  - numpy
-  - scipy
   - lxml
-  - networkx
-  - zlib
   - swig
-  - future
-  - pymbar
-  - openmm
-  - ambertools
+  - pymbar >=4
   - ndcctools
   - geometric
   - gromacs =2019.1
-  - openff-toolkit >=0.10.3|<=0.10.0
+  - openff-toolkit >=0.11.3
+  - openff-evaluator-base >=0.4
+  - openeye-toolkits

@@ -48,4 +48,3 @@ clean:
 
 dcdplugin_test: dcdplugin.c
 	gcc -lm -Wall -I include -D TEST_DCDPLUGIN -g $< -o $@
-

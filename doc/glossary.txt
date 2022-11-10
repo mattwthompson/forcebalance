@@ -38,4 +38,3 @@ reference data (for instance, a CHARMM-type force field can be fitted
 to reproduce forces from a DFT or MP2 calculation), or a force field
 can be optimized to reproduce the experimental density of a liquid,
 its enthalpy of vaporization or the solvation free energy of a solute.
-
