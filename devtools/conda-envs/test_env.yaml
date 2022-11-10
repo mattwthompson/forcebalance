@@ -8,16 +8,10 @@ dependencies:
   - python
   - pip
     # Testing
-  - pytest
   - pytest-cov
   - codecov
-  - numpy
-  - scipy
   - lxml
-  - networkx
-  - zlib
   - swig
-  - future
   - pymbar >=4
   - ndcctools
   - geometric
