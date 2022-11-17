@@ -8,6 +8,7 @@ from forcebalance.objective import Objective
 from forcebalance.optimizer import Optimizer, Counter
 import pytest
 
+@pytest.mark.skip
 class TestWaterTutorial(ForceBalanceTestCase):
     def setup_method(self, method):
         super(TestWaterTutorial, self).setup_method(method)

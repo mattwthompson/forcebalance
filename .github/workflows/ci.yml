@@ -102,7 +102,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -v --cov=forcebalance --cov-config=setup.cfg --durations=0 --cov-report=xml forcebalance/tests --ignore=forcebalance/tests/test_continue.py
+        pytest -v --cov=forcebalance --cov-config=setup.cfg --durations=0 --cov-report=xml forcebalance/tests
 
     - name: Run coverage report
       run: |
