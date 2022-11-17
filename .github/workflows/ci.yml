@@ -102,7 +102,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -v --cov=forcebalance --cov-config=setup.cfg --durations=0 --cov-report=xml forcebalance/tests
+        pytest -v --cov=forcebalance --cov-config=setup.cfg --durations=0 --cov-report=xml
 
     - name: Run water study
       run: |
