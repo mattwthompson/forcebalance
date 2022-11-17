@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - "master"
+      - "upstream_master"
+      - "main"
   pull_request:
     branches:
       - "master"
+      - "upstream_master"
+      - "main"
 
 defaults:
   run:
